@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Upload File or Enter File Path</title>
+</head>
+<body>
+    <h1>Upload your CSV or Excel file</h1>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <label for="separator">Choose a delimiter:</label>
+        <select name="separator" id="separator">
+            <option value=",">Comma (,)</option>
+            <option value=";">Semicolon (;)</option>
+            <option value="\t">Tab</option>
+            <option value="|">Pipe (|)</option>
+        </select>
+        <input type="submit" value="Upload">
+    </form>
+    <hr>
+    <h2>Or enter the absolute file path</h2>
+    <form action="/path" method="post">
+        <input type="text" name="filepath" placeholder="Enter the absolute file path here">
+        <label for="separator_path">Choose a delimiter for path:</label>
+        <select name="separator" id="separator_path">
+            <option value=",">Comma (,)</option>
+            <option value=";">Semicolon (;)</option>
+            <option value="\t">Tab</option>
+            <option value="|">Pipe (|)</option>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

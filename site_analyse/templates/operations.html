@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Operate on Data</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>Operations on {{ filename }}</header>
+    <form action="/operations/{{ filename }}" method="post">
+        <label for="operation">Choose an operation:</label>
+        <select name="operation" id="operation" onchange="checkOperation()">
+            <option value="read">Read Full File</option>
+            <option value="mean">Calculate Mean</option>
+            <option value="median">Calculate Median</option>
+            <option value="std_dev">Calculate Standard Deviation</option>
+            <option value="plot_histogram">Plot Histogram</option>
+            <option value="plot_bar">Plot Bar Chart</option>
+            <option value="plot_box">Plot Box Plot</option>
+            <option value="clean_data">Clean Data</option>
+            <option value="sort_data">Sort Data</option>
+            <option value="save_data">Save DataFrame</option>
+        </select>
+        <div id="columnInput">
+            <label for="column">Enter Column Name:</label>
+            <input type="text" id="column" name="column" placeholder="Enter column name">
+        </div>
+        <input type="submit" value="Execute">
+    </form>
+    <div>
+        {% if result %}
+            <div>{{ result|safe }}</div>
+        {% endif %}
+    </div>
+    <script>
+        function checkOperation() {
+            var operation = document.getElementById('operation').value;
+            var columnInput = document.getElementById('columnInput');
+            if (['plot_histogram', 'plot_bar', 'sort_data'].includes(operation)) {
+                columnInput.style.display = 'block';
+            } else {
+                columnInput.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

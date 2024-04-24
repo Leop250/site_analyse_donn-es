@@ -1,0 +1,80 @@
+/* Reset and basic styling */
+body, h1, form, table {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: #ffffff;
+    padding: 20px;
+}
+
+header {
+    background-color: #101010;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white for a futuristic touch */
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+input[type="file"], select, input[type="text"], input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 5px;
+    border: none;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #00b4d8; /* A bright and modern blue */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #0077b6; /* A darker shade for hover */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff;
+    color: #333;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+#columnInput {
+    display: none;
+}
+
+h2 {
+    text-align: center;
+    color: #fff;
+    margin: 20px 0;
+}

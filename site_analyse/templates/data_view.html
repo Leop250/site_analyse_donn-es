@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Data</title>
+    <style>
+        .data { border-collapse: collapse; width: 100%; }
+        .data td, .data th { border: 1px solid #ddd; padding: 8px; }
+        .data tr:nth-child(even){ background-color: #f2f2f2; }
+        .data th { padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: #4CAF50; color: white; }
+    </style>
+</head>
+<body>
+    <h1>Data Preview</h1>
+    <a href="{{ url_for('plot_histogram', filename='nom_du_fichier.csv', column='nom_de_la_colonne') }}">Voir le graphique</a>
+    <a href="{{ url_for('plot_histogram', filename=filename, column='desired_column') }}">Voir le graphique</a>
+
+
+    {% for table in tables %}
+        {{ table|safe }}
+    {% endfor %}
+    <h2>Graphs</h2>
+    <a href="{{ url_for('plot_histogram', filename='nom_du_fichier.csv', column='nom_de_la_colonne') }}">Voir le graphique</a>
+    
+
+<!-- Change ColumnName to your specific column -->
+</body>
+</html>
